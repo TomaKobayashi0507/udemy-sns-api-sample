@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 //新規ユーザー登録API
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
-
+  console.log(req.body)
   const defaultIconImage = generateIdenticon(email);
 
   const hashedPassword = await bcrypt.hash(password, 10);
